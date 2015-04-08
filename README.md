@@ -3,14 +3,14 @@ Sassy Escape [![Build Status](https://travis-ci.org/borodean/sassy-escape.svg?br
 
 A Sass wrapper for [cssesc,](http://github.com/mathiasbynens/cssesc) a JavaScript library [for escaping text for use in CSS strings or identifiers.](http://mathiasbynens.be/notes/css-escapes)
 
-`escape-css($value, $options...)`
+`escape($value, $options...)`
 -----------------------------------
 
 This function takes a value and returns an escaped version of the value where any characters that are not printable ASCII symbols are escaped using the shortest possible (but valid) [escape sequences for use in CSS strings or identifiers.](http://mathiasbynens.be/notes/css-escapes)
 
 ```scss
 body::after {
-  content: escape-css('Ich ♥ Bücher');
+  content: escape('Ich ♥ Bücher');
 }
 
 // Becomes this:
@@ -19,10 +19,10 @@ body::after {
 }
 ```
 
-By default, `escape-css` returns a string that can be used as part of a CSS string. If the target is a CSS identifier rather than a CSS string, use the `$is-identifier: true` setting.
+By default, `escape` returns a string that can be used as part of a CSS string. If the target is a CSS identifier rather than a CSS string, use the `$is-identifier: true` setting.
 
 ```scss
-.#{ unquote(escape-css('123a2b', $is-identifier: true)) } {
+.#{ unquote(escape('123a2b', $is-identifier: true)) } {
   color: red;
 }
 
@@ -36,7 +36,7 @@ The optional keyword arguments accept the exact options which JavaScript version
 
 ```scss
 body::after {
-  content: escape-css('123a2b', $escape-everything: true, $quotes: 'single', $wrap: true);
+  content: escape('123a2b', $escape-everything: true, $quotes: 'single', $wrap: true);
 }
 ```
 

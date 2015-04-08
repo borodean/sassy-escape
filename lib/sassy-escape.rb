@@ -4,7 +4,7 @@ require "sassy-escape/version"
 module Sass::Script::Functions
   # Return a string containing the escaped version of the provided data for
   # use as a CSS identifier
-  def escape_css(data, options = {})
+  def escape(data, options = {})
     require "cssesc"
     if data.instance_of? Sass::Script::String
       string = data.value.to_s
@@ -18,7 +18,7 @@ module Sass::Script::Functions
     Sass::Script::String.new(escaped_string, type)
   end
 
-  Sass::Script::Functions.declare :escape_css, [:data], var_kwargs: true
+  Sass::Script::Functions.declare :escape, [:data], var_kwargs: true
 end
 
 module SassyEscape
