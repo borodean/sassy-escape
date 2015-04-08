@@ -1,4 +1,4 @@
-Sassy Escape [![Build Status](https://travis-ci.org/borodean/sassy-escape.svg?branch=develop)](https://travis-ci.org/borodean/sassy-escape)
+Sassy Escape [![Build Status](https://travis-ci.org/borodean/sassy-escape.svg?branch=master)](https://travis-ci.org/borodean/sassy-escape)
 ============
 
 A Sass wrapper for [cssesc,](http://github.com/mathiasbynens/cssesc) a JavaScript library [for escaping text for use in CSS strings or identifiers.](http://mathiasbynens.be/notes/css-escapes)
